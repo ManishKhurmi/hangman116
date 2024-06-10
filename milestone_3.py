@@ -1,5 +1,5 @@
 ##################################################################################################################################
-# milestone 1 & 2
+# milestone 2: create the variables for the game 
 import random
 
 word_list = ['mango', 'lychee', 'banana', 'blueberry', 'apple']
@@ -11,6 +11,7 @@ random_word = random.choice(word_list)
 print(f'This is my list of words: {word_list}')
 print(f'This is the randomly generated word: {random_word}')
 ##################################################################################################################################
+# milestone 3
 
 def check_guess(guess):
     '''
