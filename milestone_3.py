@@ -12,6 +12,7 @@ print(f'This is my list of words: {word_list}')
 print(f'This is the randomly generated word: {random_word}')
 ##################################################################################################################################
 # milestone 3
+#import milestone_2
 
 def check_guess(guess):
     '''
