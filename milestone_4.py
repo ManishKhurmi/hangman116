@@ -9,6 +9,47 @@ print(f'This is my list of words: {word_list}')
 print(f'This is the randomly generated word: {word}')
 
 # ['mango', 'lychee', 'banana', 'blueberry', 'apple']
+
+####################################################################################################################################
+# Task 2
+word = 'apple'
+
+# Task 2: Create methods for running the checks 
+def check_guess(guess):
+    '''
+    This function checks if the guess is in the randomly generated word.
+    '''
+    guess = guess.lower() # converts the guess into a lowercase
+    if guess in word:
+        print(f'Good guess! {guess} is in the word')
+
+list_of_guesses = ['b']
+
+# Attempt 2 for ask_for_input()
+def ask_for_input():
+    '''
+    Asks for user their guess and prints a message on the outcome.
+    '''
+    while True: 
+        guess = input('Guess a Letter:')
+        
+        if len(guess) != 1:
+            print('Invalid letter. Please, enter a single alphabetical character')
+        if guess.isalpha() is False: #if the guess is not a single alphabetical character
+            print('Invalid letter. Please, enter a single alphabetical character')
+        elif guess in list_of_guesses:
+            print('You already tried that letter!')
+        else: 
+            check_guess(guess)
+
+ask_for_input()
+# Test with the following inputs: '1' , 'manish', 'b'
+
+####################################################################################################################################
+
+
+
+
 ####################################################################################################################################
 import random 
 
@@ -182,39 +223,7 @@ print(mango_enumerated)
 # Testing the class 
 Hangman(word_list = ['mango', 'lychee', 'banana', 'blueberry', 'apple'], number_of_lives = 5)
 
-####################################################################################################################################
-# Working Task 2
-# Task 2: Create methods for running the checks 
-def check_guess(guess):
-    '''
-    This function checks if the guess is in the randomly generated word.
-    '''
-    guess = guess.lower() # converts the guess into a lowercase
-    if guess in word:
-        print(f'Good guess! {guess} is in the word')
 
-list_of_guesses = ['b']
-
-# Attempt 2 for ask_for_input()
-def ask_for_input():
-    '''
-    Asks for user their guess and prints a message on the outcome.
-    '''
-    while True: 
-        guess = input('Guess a Letter:')
-        
-        if len(guess) != 1:
-            print('Invalid letter. Please, enter a single alphabetical character')
-        if guess.isalpha() is False: #if the guess is not a single alphabetical character
-            print('Invalid letter. Please, enter a single alphabetical character')
-        elif guess in list_of_guesses:
-            print('You already tried that letter!')
-        else: 
-            check_guess(guess)
-
-ask_for_input()
-
-####################################################################################################################################
 
 
 ################################################################################################################

@@ -17,7 +17,6 @@ class Hangman:
 
     # Task 2
     def check_guess(self, guess):
-
         '''
         This function checks if the guess is in the randomly generated word.
         '''

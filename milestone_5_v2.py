@@ -27,10 +27,10 @@ class Hangman:
             for letter in self.word:
                 if letter == guess:
                     self.word_guessed[self.word.index(letter)] = guess
-            self.num_letters - 1 
+            self.num_letters -= 1 
         else:
             # reduce the number of lives by 1 for every wrong guess
-            self.num_lives = self.num_lives - 1 
+            self.num_lives -= 1
             print(f'Sorry, {guess} is not in the word')
             print(f'You have {self.num_lives} lives left')
 
@@ -43,18 +43,14 @@ class Hangman:
         while True: 
             guess = input('Guess a Letter:')
             
-            if len(guess) != 1:
+            if len(guess) != 1 or not guess.isalpha():
                 print('Invalid letter. Please, enter a single alphabetical character')
-            # elif guess.isalpha() is False: #if the guess is not a single alphabetical character
-            #     print('Invalid letter. Please, enter a single alphabetical character')
             elif guess in self.list_of_guesses:
                 print('You already tried that letter!')
-            # For testing check_guess()
-            #elif len(self.list_of_guesses) == 3: # For Testing only 
-                #break
             else: 
                 self.list_of_guesses.append(guess) 
                 self.check_guess(guess)
+                break
 
 def play_game(word_list):
 
@@ -64,33 +60,23 @@ def play_game(word_list):
     while True:
         if game.num_lives == 0:
             print('You lost!')
-        if game.num_lives > 0:
-            game.ask_for_input()
-        if game.num_lives != 0 and game.num_letters == 0:
+            break
+        elif game.num_letters == 0:
             print('Congratulations. You won the game!')
             break
+        else:
+            game.ask_for_input()
 
 # Testing play_game()
-play_game(word_list = ['sam', 'ben'])
+play_game(word_list = ['apples', 'bananas'])
 
-##################################################################################################
-# Testing 
-num_lives = 5
-word_list = ['sam', 'ben']
-game = Hangman(word_list, num_lives)
-game.ask_for_input()
 
-# Testing
-game = Hangman(word_list = ['sam', 'ben'], num_lives = 5)
-game.ask_for_input()
-game.num_lives
-game.word
-game.num_letters
+# learnings 
+# input breaks for win and lost moments in the game
+# learn't how to solve problems when calling classes by following the flow of information :variables and functions in the class.
+# Using in-place operators '-= 1' to correctly update num_lives. Here '-=' us used to reduce the value by 1 and update it in place
+# Proper Use of 'self'
+    # Ensure all instance variable modifications and method calls within a class use self to refer to the instance correctly.
+# combine checks for single alphabet 
 
-# Testing the game class 
-game = Hangman(word_list= ['banana', 'apples'], num_lives= 5)
-print(game.word)
-game.ask_for_input()
-game.num_letters
-game.word
-game.list_of_guesses
+

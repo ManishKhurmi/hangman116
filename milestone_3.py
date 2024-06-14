@@ -11,8 +11,12 @@ random_word = random.choice(word_list)
 print(f'This is my list of words: {word_list}')
 print(f'This is the randomly generated word: {random_word}')
 ##################################################################################################################################
-# milestone 3
-#import milestone_2
+# milestone 2: create the variables for the game 
+import milestone_2
+
+word_list = milestone_2.word_list
+random_word = milestone_2.random_word
+
 
 def check_guess(guess):
     '''
