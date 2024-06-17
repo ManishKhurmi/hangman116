@@ -103,10 +103,7 @@ def play_game(word_list):
             game.ask_for_input()
 
 # Use the help() to find out information about the Hangman Game
-help(Hangman)
+#help(Hangman)
 
 # Testing play_game()
-play_game(word_list = ['apples', 'bananas'])
-
-
-
+play_game(word_list = ['apples', 'bananas','cherries'])

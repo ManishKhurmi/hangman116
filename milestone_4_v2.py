@@ -75,9 +75,6 @@ c = '#'
 print([pos for pos, char in enumerate(s) if char == c])
 
 # Tailor to our project 
-
-
-
 print([pos for pos, char in enumerate(word) if char == guess ])
 
 position = [pos for pos, char in enumerate(word) if char == guess ]
