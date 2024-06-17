@@ -17,7 +17,7 @@ This is an implementation of the Hangman game, where the computer thinks of a wo
 Open to all 
 
 # My Learnings from the Project
-- **LEVERAGE EXISTING FUNCTIONS**: Often, there were pre-built functions in Python created by other developers that can were very useful. Researching these functions saved time and effort.
+Check out project_learnings.py for example code of the learnings below.
 
 - **BREAK DOWN PROBLEMS**: No matter how simple or complex a problem might seem, break it down into smaller, manageable parts. This approach made it easier to start working on a solution.
 
@@ -38,6 +38,8 @@ Open to all
 - **REFERENCE SELF VARIABLES CORRECTLY**: Correctly reference `self` variable from the `__init__()` method when defining new methods. Initially, I struggled with this syntax, often missing the self parameter (e.g., `check_guess(self)` vs. `check_guess()`).This ensures that variables defined in the `__init__()` method are accessed correctly.
 
 - **CONSIDER DATA STRUCTURES**: Think about the data structures being used. For example, creating the `word_guessed` variable with the `set()` function extracts unique letters in one line of code, which is more efficient than using a separate function.
+
+- **LEVERAGE EXISTING FUNCTIONS**: Often, there were pre-built functions in Python created by other developers that can were very useful. Researching these functions saved time and effort.
 
 
 
