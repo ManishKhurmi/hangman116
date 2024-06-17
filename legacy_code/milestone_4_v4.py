@@ -1,5 +1,3 @@
-# After talking to Patrick 
-
 # There is a way to initialise the variables without needing additional functions to be defined in the class 
 import random
 

@@ -1,3 +1,4 @@
+# Milestone 2: Create the variables for the game 
 import random
 
 word_list = ['mango', 'lychee', 'banana', 'blueberry', 'apple']

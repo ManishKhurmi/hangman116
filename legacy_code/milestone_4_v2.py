@@ -1,5 +1,5 @@
 # For testing: 
-import milestone_2
+import milestone_2 as milestone_2
 # Giving values to the parameters 
 word_list = milestone_2.word_list
 word = milestone_2.random_word

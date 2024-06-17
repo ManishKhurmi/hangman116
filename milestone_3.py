@@ -1,18 +1,5 @@
-##################################################################################################################################
-# milestone 2: create the variables for the game 
-import random
-
-word_list = ['mango', 'lychee', 'banana', 'blueberry', 'apple']
-
-# randomly generated word 
-random_word = random.choice(word_list)
-
-# print variables
-print(f'This is my list of words: {word_list}')
-print(f'This is the randomly generated word: {random_word}')
-##################################################################################################################################
-# milestone 2: create the variables for the game 
-import milestone_2
+# Milestone 3: Check if the guessed character is in the word 
+import milestone_2 as milestone_2
 
 word_list = milestone_2.word_list
 random_word = milestone_2.random_word
@@ -48,6 +35,3 @@ def ask_for_input():
     check_guess(guess)
     
 ask_for_input()
-
-#################################################################
-#################################################################
