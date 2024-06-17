@@ -16,7 +16,7 @@ This is an implementation of the Hangman game, where the computer thinks of a wo
 ## License information
 Open to all 
 
-# My Learnings from the Project
+## My Learnings from the Project
 Check out project_learnings.py for example code of the learnings below.
 
 - **BREAK DOWN PROBLEMS**: No matter how simple or complex a problem might seem, break it down into smaller, manageable parts. This approach made it easier to start working on a solution.
