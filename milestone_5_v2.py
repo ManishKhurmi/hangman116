@@ -6,30 +6,50 @@ import random
 class Hangman:
     # Task 1
     def __init__(self, word_list, num_lives):
+
+        '''
+        This class is used to represent the Hangman Game.
+
+        Attributes:
+        word (str): the random word chosen from the word_list
+        word_guessed (list): a list to store the correct guesses e.g. creates ['_','_','_'] for the word 'cat'
+        num_letters (int): the number of unique letters not guessed yet 
+        num_lives (int): # the number of lives the player has at the start of the game 
+        word_list (list): A list of words from which the game will randomly choose one for the player to guess. 
+                          For example, ['mango', 'lychee', 'banana'].
+        self.list_of_guesses (list): the list of the players' guesses
+        '''
       
-        self.word = random.choice(word_list) # random word picked from word_list 
-        self.word_guessed = len(self.word) * ['_'] # a list of letters of the word with a '_' if the letter is not guessed
-        # create the logic for each variable base
-        self.num_letters = len(set(self.word))# the number of UNIQUE letters not guessed yet 
-        self.num_lives = num_lives # the number of lives the player has at the start of the game 
-        self.word_list = word_list # e.g. ['mango', 'lychee', 'banana', 'blueberry', 'apple']
-        self.list_of_guesses = [] # a list of guesses that have already been tried 
+        self.word = random.choice(word_list) 
+        self.word_guessed = len(self.word) * ['_'] 
+        self.num_letters = len(set(self.word))
+        self.num_lives = num_lives 
+        self.word_list = word_list 
+        self.list_of_guesses = [] 
 
     # Task 2
     def check_guess(self, guess):
         '''
-        This function checks if the guess is in the randomly generated word.
+        This function checks if the players guessed letter is in the randomly generated word.
+
+        This function processes a player's guess by converting it to lowercase and checking if it
+        is present in the word to be guessed. If the guess is correct, it updates the word_guessed 
+        list to reveal the guessed letters and decreases the count of remaining unique letters by
+        1. If the guess is incorrect, it decreases the players number of lives by 1.
+
+        Attribues:
+        guess (str): The letter guessed by the player
         '''
-        guess = guess.lower() # converts the guess into a lowercase
+        guess = guess.lower() 
         
-        if guess in self.word:
+        if guess in self.word: 
             print(f'Good guess! {guess} is in the word')
             for letter in self.word:
                 if letter == guess:
                     self.word_guessed[self.word.index(letter)] = guess
             self.num_letters -= 1 
-        else:
-            # reduce the number of lives by 1 for every wrong guess
+        else: 
+            
             self.num_lives -= 1
             print(f'Sorry, {guess} is not in the word')
             print(f'You have {self.num_lives} lives left')
@@ -38,7 +58,12 @@ class Hangman:
     # Task 2
     def ask_for_input(self):
         '''
-        Asks for user their guess and prints a message on the outcome.
+        Prompts the user to guess a letter and provide feedback on the outcome.
+
+        This function continously prompts the player to guess a letter until a valid guess is 
+        provied. It validates the input to ensure it is an input that hasn't been guessed 
+        before. If the guess is valid, it updates the list of guesses and checks if the 
+        guess is in the word using the check_guess() method.
         '''
         while True: 
             guess = input('Guess a Letter:')
@@ -53,6 +78,19 @@ class Hangman:
                 break
 
 def play_game(word_list):
+    '''
+    Execute the main game loop for Hangman.
+
+    This function intialises the Hangman game with a given list of words and a fixed number of lives. It continously 
+    prompts the player for guesses and provides feedback on their progress. The game ends when the player either 
+    guesses all the letters in the word or runs out of lives.
+
+
+    Attributes:
+    word_list (list): A list of words from which the game will randomly choose one for the player to guess. 
+                      For example, ['mango', 'lychee', 'banana'].
+    '''
+
 
     num_lives = 5
     game = Hangman(word_list, num_lives)
